@@ -8,19 +8,59 @@
     <!-- Slide — HTML Form Basics -->
     <section>
         <h2>HTML Form Basics</h2>
-        <pre><code class="language-html">&lt;!-- GET — data visible in URL, for searches / filters --&gt;
+        <div class="compare compare-form">
+            <div>
+                <pre class="mt0 mb0"><code class="language-html">&lt;!-- GET — data visible in URL --&gt;
 &lt;form action="/search.php" method="GET"&gt;
-    &lt;input type="text" name="q" placeholder="Search..."&gt;
+    &lt;input type="search" name="q" placeholder="Search..."&gt;
     &lt;button type="submit"&gt;Go&lt;/button&gt;
-&lt;/form&gt;
-
-&lt;!-- POST — data in request body, for creating/modifying data --&gt;
+&lt;/form&gt;</code></pre>
+            </div>
+            <div class="form-preview">
+                <span class="method-badge method-get">GET</span>
+                <form onsubmit="return false">
+                    <div class="form-group">
+                        <input type="search" placeholder="Search..." disabled>
+                    </div>
+                    <button type="button">Go</button>
+                </form>
+            </div>
+        </div>
+        <div class="compare compare-form">
+            <div>
+                <pre class="mt0 mb0"><code class="language-html">&lt;!-- POST — data in request body --&gt;
 &lt;form action="/register.php" method="POST"&gt;
-    &lt;input type="text"     name="username" required&gt;
-    &lt;input type="email"    name="email"    required&gt;
-    &lt;input type="password" name="password" required&gt;
+    &lt;label for="user-input"&gt;Username&lt;/label&gt;
+    &lt;input name="user" id="user-input" type="text"&gt;
+
+    &lt;label for="mail-input"&gt;Email&lt;/label&gt;
+    &lt;input name="mail" id="mail-input" type="email"&gt;
+
+    &lt;label for="pass-input"&gt;Password&lt;/label&gt;
+    &lt;input name="pass" id="pass-input" type="password"&gt;
+
     &lt;button type="submit"&gt;Register&lt;/button&gt;
 &lt;/form&gt;</code></pre>
+            </div>
+            <div class="form-preview">
+                <span class="method-badge method-post">POST</span>
+                <form class="form-stack" onsubmit="return false">
+                    <div class="form-group">
+                        <label for="user">Username</label>
+                        <input name="user" id="user" type="text" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="mail">Email</label>
+                        <input name="mail" id="mail" type="email" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="pass">Password</label>
+                        <input name="pass" id="pass" type="password" disabled>
+                    </div>
+                    <button type="button">Register</button>
+                </form>
+            </div>
+        </div>
         <p class="small">The <code>name</code> attribute on each input becomes the key in PHP's superglobal array.</p>
     </section>
 

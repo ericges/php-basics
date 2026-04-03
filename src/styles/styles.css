@@ -58,6 +58,7 @@
   border-radius: 4px;
   font-size: 0.82em;
   color: var(--accent-amber);
+  font-variant-ligatures: none;
 }
 
 /* ── Prism code blocks inside reveal ────────────────────────── */
@@ -90,6 +91,7 @@
   text-shadow: none !important;
   display: block;
   white-space: pre;
+  font-variant-ligatures: none;
 }
 
 /* override prism background for token consistency */
@@ -175,6 +177,16 @@
   gap: 0.5em;
   margin-block: .35em .5em;
 }
+.compare.compare-form {
+  grid-template-columns: 1fr auto;
+}
+.compare.compare-form > .form-preview {
+  width: 160px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .compare > div {
   background: var(--bg-card); border: 1px solid var(--border-subtle);
   border-radius: 8px; padding: 0.5em 0.7em;
@@ -211,7 +223,109 @@
 .reveal .slide-number {
   font-family: 'JetBrains Mono', monospace;
   color: var(--text-muted); font-size: 13px;
-  background: transparent; right: 22px; bottom: 14px;
+  background: transparent; right: auto; left: 22px; bottom: 14px;
+  text-decoration: none;
+}
+
+/* ── Form Preview ──────────────────────────────────────────── */
+.form-preview {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 0.8em 1em;
+  font-size: 0.48em;
+  text-align: left;
+}
+.form-preview .preview-label {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--accent-blue);
+  font-size: 0.78em;
+  font-weight: 600;
+  margin-bottom: 0.6em;
+  display: block;
+}
+.form-preview form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  align-items: flex-end;
+  padding-bottom: 1em;
+}
+.form-preview form.form-stack {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.8em;
+}
+.form-preview label {
+  font-size: 0.82em;
+  color: var(--text-muted);
+  margin-bottom: 0.15em;
+  display: block;
+}
+.form-preview input,
+.form-preview select,
+.form-preview textarea {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9em;
+  padding: 0.35em 0.55em;
+  background: var(--bg-code);
+  border: 1px solid var(--border-subtle);
+  border-radius: 5px;
+  color: var(--text-primary);
+  outline: none;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+}
+.form-preview input:focus {
+  border-color: var(--accent-teal);
+  box-shadow: 0 0 0 2px rgba(61,214,200,0.15);
+}
+.form-preview input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+.form-preview button {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85em;
+  padding: 0.35em 1em;
+  background: var(--bg-code);
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.form-preview .form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+.form-preview hr {
+  border: none;
+  border-top: 1px solid var(--border-subtle);
+  margin: 0.6em 0;
+  width: 100%;
+}
+.form-preview .method-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7em;
+  font-weight: 600;
+  padding: 0.15em 0.5em;
+  border-radius: 3px;
+  display: inline-block;
+  align-self: flex-start;
+  margin-bottom: 0.8em;
+}
+.form-preview .method-get {
+  background: rgba(94,170,252,0.15);
+  color: var(--accent-blue);
+}
+.form-preview .method-post {
+  background: rgba(94,234,212,0.15);
+  color: var(--accent-green);
 }
 
 /* Ensure fragment visibility */

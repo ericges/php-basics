@@ -2,29 +2,12 @@
     <!-- Slide — divider -->
     <section class="section-divider" data-transition="slide">
         <p class="section-num">03</p>
-        <h2>Data, Variables &amp; Syntax</h2>
-    </section>
-
-    <!-- Slide — Basic Types -->
-    <section>
-        <h2>Basic Types</h2>
-        <h3>Scalar Types</h3>
-        <pre><code class="language-php">&lt;?php
-
-$name    = 'Alice';  // string
-$age     = 30;       // int
-$price   = 9.99;     // float (aka double)
-$isAdmin = false;    // bool</code></pre>
-        <h3>Array &amp; Null</h3>
-        <pre><code class="language-php">&lt;?php
-
-$colors      = ['red', 'green', 'blue'];  // array
-$middle_name = null;                      // null — explicitly "no value"</code></pre>
+        <h2>Syntax, Variables &amp; Data</h2>
     </section>
 
     <!-- Slide — Variables -->
     <section>
-        <h2>Variables</h2>
+        <h2>Defining Variables</h2>
         <pre><code class="language-php">&lt;?php
 
 // Variables always start with $
@@ -44,6 +27,48 @@ $_count = 0;       // valid
             Every statement ends with a <span class="hl-amber">semicolon</span> <code>;</code> — forgetting it is the
             most common beginner mistake!
         </div>
+    </section>
+
+    <!-- Slide — Basic Types -->
+    <section>
+        <h2>Basic Types</h2>
+        <h3>Scalar Types</h3>
+        <pre><code class="language-php">&lt;?php
+
+$name    = 'Alice';  // string
+$age     = 30;       // int
+$price   = 9.99;     // float (aka double)
+$isAdmin = false;    // bool</code></pre>
+        <h3>Array &amp; Null</h3>
+        <pre><code class="language-php">&lt;?php
+
+$colors      = ['red', 'green', 'blue'];  // array
+$middle_name = null;                      // null — explicitly "no value"</code></pre>
+    </section>
+
+    <!-- Slide — Callables and Calling Functions -->
+    <section>
+        <h2>Calling Functions</h2>
+        <pre><code class="language-php">&lt;?php
+
+// PHP has hundreds of built-in functions — call them by name
+$length = strlen('Hello');        // 5
+$upper  = strtoupper('hello');    // "HELLO"
+$random = random_int(1, 100);    // e.g. 42
+
+// Functions can be nested
+$trimmed = strtolower(trim('  HELLO  ')); // "hello"
+
+// Some functions modify variables in place (pass by reference)
+$fruits = ['banana', 'apple', 'cherry'];
+sort($fruits);
+// $fruits is now ['apple', 'banana', 'cherry']
+
+// Check if a function exists
+if (function_exists('mb_strlen')) {
+    echo mb_strlen('Héllo'); // 5 (multibyte-safe)
+}</code></pre>
+        <p class="small">Find every built-in function at <span class="hl-teal">php.net/manual/en/funcref.php</span></p>
     </section>
 
     <!-- Slide — Constants -->
@@ -70,31 +95,6 @@ echo RANDOM_ID; // e.g. 472</code></pre>
             assignment
             itself is conditional.
         </div>
-    </section>
-
-    <!-- Slide — Callables and Calling Functions -->
-    <section>
-        <h2>Callables &amp; Calling Functions</h2>
-        <pre><code class="language-php">&lt;?php
-
-// PHP has hundreds of built-in functions — call them by name
-$length = strlen('Hello');        // 5
-$upper  = strtoupper('hello');    // "HELLO"
-$random = random_int(1, 100);    // e.g. 42
-
-// Functions can be nested
-$trimmed = strtolower(trim('  HELLO  ')); // "hello"
-
-// Some functions modify variables in place (pass by reference)
-$fruits = ['banana', 'apple', 'cherry'];
-sort($fruits);
-// $fruits is now ['apple', 'banana', 'cherry']
-
-// Check if a function exists
-if (function_exists('mb_strlen')) {
-    echo mb_strlen('Héllo'); // 5 (multibyte-safe)
-}</code></pre>
-        <p class="small">Find every built-in function at <span class="hl-teal">php.net/manual/en/funcref.php</span></p>
     </section>
 
     <!-- Slide — Comments -->

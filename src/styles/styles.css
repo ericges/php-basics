@@ -347,3 +347,34 @@
 strong {
   font-weight: 700 !important;
 }
+
+.title-slide {
+  padding-top: 6.7rem;
+}
+
+.title-slide .author {
+  opacity: 0.35;
+  font-size: 0.7rem;
+  transition: all 0.2s ease-in-out;
+  display: inline-flex;
+  gap: 1em;
+  margin-block-start: 4rem;
+  filter: grayscale(.5);
+  cursor: default;
+  padding: 1rem;
+  &:hover {
+    opacity: 1;
+    filter: grayscale(0);
+  }
+  a {
+    cursor: pointer;
+  }
+  img {
+    height: 1.1em;
+    width: 1.1em;
+    vertical-align: baseline;
+    display: inline-block;
+    translate: 0 .15em;
+    margin-inline: .1em
+  }
+}

@@ -104,9 +104,20 @@
   font-variant-ligatures: none;
 }
 
-/* override prism background for token consistency */
+/* override prism token colors */
 .reveal pre code .token.operator,
 .reveal pre code .token.punctuation { color: #a9b7c6; }
+
+.reveal pre code .token.tag,
+.reveal pre code .token.keyword,
+.reveal pre code .token.delimiter { color: #e8925c; }
+
+.reveal pre code .token.function,
+.reveal pre code .token.function-definition { color: #6cb4ee; }
+
+.reveal pre code .token.variable { color: #ab81c1; }
+
+.reveal pre code .token.number { color: #6ccec4; }
 
 .stack > section {
   padding-inline: 20px;

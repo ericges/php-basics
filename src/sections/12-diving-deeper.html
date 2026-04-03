@@ -5,6 +5,35 @@
         <h2>Diving Deeper</h2>
     </section>
 
+    <!-- Slide — Multibyte Strings -->
+    <section>
+        <h2>Multibyte Strings</h2>
+        <pre><code class="language-php">&lt;?php
+
+$emoji = "Hello 🌍!";
+
+// strlen counts BYTES, not characters
+echo strlen($emoji);        // 11 (🌍 = 4 bytes)
+echo mb_strlen($emoji);     // 8  (correct character count)
+
+// Same issue with other functions
+$name = "José";
+echo strtolower($name);     // may mangle accented chars
+echo mb_strtolower($name);  // "josé" ✓
+
+// Substring
+$jp = "こんにちは";
+echo substr($jp, 0, 3);     // garbled (3 bytes ≠ 3 chars)
+echo mb_substr($jp, 0, 3);  // "こんに" ✓
+</code></pre>
+        <p class="small">PHP's built-in string functions treat strings as <span class="hl-amber">byte sequences</span>.<br>
+            Use <span class="hl-teal">mb_*</span> functions whenever your text may contain non-ASCII characters.</p>
+        <div class="best-practice">
+            Use <code>mb_</code> prefixed functions (<code>mb_strlen</code>, <code>mb_substr</code>,
+            <code>mb_strtolower</code>, etc.) for any user-facing text.
+        </div>
+    </section>
+
     <!-- Slide — Heredoc & Nowdoc -->
     <section>
         <h2>Heredoc &amp; Nowdoc</h2>
@@ -45,21 +74,19 @@ echo $code;</code></pre>
             <div>
                 <p class="label-good">Source (indented in code)</p>
                 <pre><code class="language-php">echo &lt;&lt;&lt;HTML
-····&lt;div&gt;
-········&lt;p&gt;Hello!&lt;/p&gt;
-····&lt;/div&gt;
-····HTML; /* &lt;-- closing marker
-^^^^ indents stripped in output */</code></pre>
+·····&lt;div&gt;
+·········&lt;p&gt;Hello!&lt;/p&gt;
+·····&lt;/div&gt;
+·······Extra whitespace is preserved.
+·····HTML; /* &lt;-- closing marker
+^^^^^ indents stripped in output */</code></pre>
             </div>
             <div>
-                <p class="label-good">Output (whitespace stripped)</p>
-                <pre><code class="language-markup">
-&lt;div&gt;
+                <p class="label-good">Output (stripped whitespace)</p>
+                <pre><code class="language-markup">&lt;div&gt;
 ····&lt;p&gt;Hello!&lt;/p&gt;
 &lt;/div&gt;
-
-
-</code></pre>
+··Extra whitespace is preserved.</code></pre>
             </div>
         </div>
         <hr>

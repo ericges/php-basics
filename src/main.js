@@ -16,9 +16,9 @@ import title from './sections/00-title.html?raw'
 import whatIsPhp from './sections/01-what-is-php.html?raw'
 import firstPhpFile from './sections/02-first-php-file.html?raw'
 import variablesSyntax from './sections/03-variables-syntax.html?raw'
-import debugging from './sections/04-debugging.html?raw'
+import strings from './sections/04-strings.html?raw'
 import echoPrintDie from './sections/05-echo-print-die.html?raw'
-import strings from './sections/06-strings.html?raw'
+import debugging from './sections/06-debugging.html?raw'
 import controlFlow from './sections/07-control-flow.html?raw'
 import functions from './sections/08-functions.html?raw'
 import arrays from './sections/09-arrays.html?raw'
@@ -32,9 +32,9 @@ const sections = [
   whatIsPhp,
   firstPhpFile,
   variablesSyntax,
-  debugging,
-  echoPrintDie,
   strings,
+  echoPrintDie,
+  debugging,
   controlFlow,
   functions,
   arrays,

@@ -29,6 +29,10 @@
   font-size: 30px;
   color: var(--text-primary);
   font-weight: 400;
+  p {
+    line-height: 1.5 !important;
+    text-wrap: balance;
+  }
 }
 .reveal .slides > section > section,
 .reveal .slides > section:not(:has(> section)) {

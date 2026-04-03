@@ -1,7 +1,7 @@
 <section>
     <!-- Slide — divider -->
     <section class="section-divider" data-transition="slide">
-        <p class="section-num">06</p>
+        <p class="section-num">04</p>
         <h2>Strings &amp; Interpolation</h2>
     </section>
 
@@ -58,33 +58,5 @@ echo "She has {$user}s";    // ✓ "She has Alices"
             Always wrap variables in curly braces <code>{$var}</code> inside double-quoted strings.
             It's unambiguous and prevents subtle bugs.
         </div>
-    </section>
-
-    <!-- Slide — Heredoc & Nowdoc -->
-    <section>
-        <h2>Heredoc &amp; Nowdoc</h2>
-        <div class="compare">
-            <div>
-                <p class="label-good">Heredoc — interpolates (like "")</p>
-                <pre><code class="language-php">$name = 'Alice';
-$html = &lt;&lt;&lt;HTML
-    &lt;h1&gt;Welcome&lt;/h1&gt;
-    &lt;p&gt;Hello, {$name}!&lt;/p&gt;
-    HTML;
-
-echo $html;</code></pre>
-            </div>
-            <div>
-                <p class="label-good">Nowdoc — literal (like '')</p>
-                <pre><code class="language-php">$code = &lt;&lt;&lt;'TEXT'
-    Variables like $name are
-    NOT interpolated here.
-    TEXT;
-
-echo $code;</code></pre>
-            </div>
-        </div>
-        <p class="small">Useful for multi-line strings. Heredoc behaves like double quotes; Nowdoc (note the single
-            quotes around the tag) behaves like single quotes.</p>
     </section>
 </section>

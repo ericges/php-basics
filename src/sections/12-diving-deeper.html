@@ -5,11 +5,76 @@
         <h2>Diving Deeper</h2>
     </section>
 
+    <!-- Slide — Heredoc & Nowdoc -->
+    <section>
+        <h2>Heredoc &amp; Nowdoc</h2>
+        <p>
+            Heredoc and Nowdoc are a convenient way to write multi-line strings that can be used for formatting HTML,
+            SQL queries, or other text content without having to escape special characters.
+        </p>
+        <div class="compare">
+            <div>
+                <p class="label-good">Heredoc<br>interpolates (like "")</p>
+                <pre><code class="language-php">$name = 'Alice';
+$html = &lt;&lt;&lt;HTML
+    &lt;h1&gt;Welcome&lt;/h1&gt;
+    &lt;p&gt;Hello, {$name}!&lt;/p&gt;
+    HTML;
+
+echo $html;</code></pre>
+            </div>
+            <div>
+                <p class="label-good">Nowdoc<br>literal (like '')</p>
+                <pre><code class="language-php">
+$code = &lt;&lt;&lt;'TEXT'
+    Variables like {$name} are
+    NOT interpolated here.
+    TEXT;
+
+echo $code;</code></pre>
+            </div>
+        </div>
+        <p>Heredoc behaves like double quotes; Nowdoc (note the single
+            quotes around the tag) behaves like single-quoted strings.</p>
+        <hr>
+        <p>The closing marker's indentation sets the baseline — that many leading
+            spaces are stripped from every line.
+            <br>This lets you indent heredocs naturally in your code
+            without extra whitespace leaking into the output.</p>
+        <div class="compare">
+            <div>
+                <p class="label-good">Source (indented in code)</p>
+                <pre><code class="language-php">echo &lt;&lt;&lt;HTML
+····&lt;div&gt;
+········&lt;p&gt;Hello!&lt;/p&gt;
+····&lt;/div&gt;
+····HTML; /* &lt;-- closing marker
+^^^^ indents stripped in output */</code></pre>
+            </div>
+            <div>
+                <p class="label-good">Output (whitespace stripped)</p>
+                <pre><code class="language-markup">
+&lt;div&gt;
+····&lt;p&gt;Hello!&lt;/p&gt;
+&lt;/div&gt;
+
+
+</code></pre>
+            </div>
+        </div>
+        <hr>
+        <p>If any line is indented <em>less</em> than the closing marker, PHP throws a parse error:</p>
+        <pre><code class="language-php">echo &lt;&lt;&lt;HTML
+··&lt;p&gt;Oops!&lt;/p&gt;   // ← only 2 spaces
+····HTML;        // ← closing marker expects 4
+// Parse error: Invalid body indentation level</code></pre>
+    </section>
+
     <!-- Slide — Docblocks -->
     <section>
         <h2>Docblocks</h2>
-        <p>Docblocks start with <code>/**</code> and describe code with annotations like <code>@param</code>,
-            <code>@return</code> or <code>@throws</code>.
+        <p>Docblocks are multiline comments that start with <code>/**</code>.
+            <br>They describe code with annotations like <code>@param</code>, <code>@return</code> or <code>@throws</code>.
             <br>IDEs, static analysers, and documentation generators rely on them, e.g., to assist with code
             understanding and documentation.</p>
         <pre><code class="language-php">&lt;?php

@@ -1,14 +1,14 @@
 <section>
-  <!-- Slide — divider -->
-  <section class="section-divider" data-transition="slide">
-    <p class="section-num">08</p>
-    <h2>Functions</h2>
-  </section>
+    <!-- Slide — divider -->
+    <section class="section-divider" data-transition="slide">
+        <p class="section-num">08</p>
+        <h2>Functions</h2>
+    </section>
 
-  <!-- Slide — Declaring Functions -->
-  <section>
-    <h2>Declaring Functions</h2>
-    <pre><code class="language-php">&lt;?php
+    <!-- Slide — Declaring Functions -->
+    <section>
+        <h2>Declaring Functions</h2>
+        <pre><code class="language-php">&lt;?php
 
 // Parameter types + return type
 function calculateTax(float $amount, float $rate = 0.19): float
@@ -30,12 +30,12 @@ function findById(int $id): ?string
 {
     // returns string or null
 }</code></pre>
-  </section>
+    </section>
 
-  <!-- Slide — Arrow Functions -->
-  <section>
-    <h2>Arrow Functions</h2>
-    <pre><code class="language-php">&lt;?php
+    <!-- Slide — Arrow Functions -->
+    <section>
+        <h2>Arrow Functions</h2>
+        <pre><code class="language-php">&lt;?php
 
 // Traditional anonymous function (closure)
 $double = function (int $n): int {
@@ -56,12 +56,12 @@ echo $multiply(4); // 12
 $numbers = [1, 2, 3, 4, 5];
 $squared = array_map(fn(int $n): int => $n ** 2, $numbers);
 // [1, 4, 9, 16, 25]</code></pre>
-  </section>
+    </section>
 
-  <!-- Slide — Named Arguments -->
-  <section>
-    <h2>Named Arguments</h2>
-    <pre><code class="language-php">&lt;?php
+    <!-- Slide — Named Arguments -->
+    <section>
+        <h2>Named Arguments</h2>
+        <pre><code class="language-php">&lt;?php
 
 function createUser(
     string $name,
@@ -87,5 +87,5 @@ createUser(
     email: 'carol@example.com',
     name: 'Carol',
 );</code></pre>
-  </section>
+    </section>
 </section>

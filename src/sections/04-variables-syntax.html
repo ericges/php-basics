@@ -1,31 +1,31 @@
 <section>
-  <!-- Slide — divider -->
-  <section class="section-divider" data-transition="slide">
-    <p class="section-num">03</p>
-    <h2>Data, Variables &amp; Syntax</h2>
-  </section>
+    <!-- Slide — divider -->
+    <section class="section-divider" data-transition="slide">
+        <p class="section-num">03</p>
+        <h2>Data, Variables &amp; Syntax</h2>
+    </section>
 
-  <!-- Slide — Basic Types -->
-  <section>
-    <h2>Basic Types</h2>
-    <h3>Scalar Types</h3>
-    <pre><code class="language-php">&lt;?php
+    <!-- Slide — Basic Types -->
+    <section>
+        <h2>Basic Types</h2>
+        <h3>Scalar Types</h3>
+        <pre><code class="language-php">&lt;?php
 
-$name    = 'Alice';   // string
-$age     = 30;        // int
-$price   = 9.99;      // float (aka double)
-$isAdmin = false;     // bool</code></pre>
-    <h3>Array &amp; Null</h3>
-    <pre><code class="language-php">&lt;?php
+$name    = 'Alice';  // string
+$age     = 30;       // int
+$price   = 9.99;     // float (aka double)
+$isAdmin = false;    // bool</code></pre>
+        <h3>Array &amp; Null</h3>
+        <pre><code class="language-php">&lt;?php
 
-$colors      = ['red', 'green', 'blue']; // array
-$middle_name = null;                     // null — explicitly "no value"</code></pre>
-  </section>
+$colors      = ['red', 'green', 'blue'];  // array
+$middle_name = null;                      // null — explicitly "no value"</code></pre>
+    </section>
 
-  <!-- Slide — Variables -->
-  <section>
-    <h2>Variables</h2>
-    <pre><code class="language-php">&lt;?php
+    <!-- Slide — Variables -->
+    <section>
+        <h2>Variables</h2>
+        <pre><code class="language-php">&lt;?php
 
 // Variables always start with $
 $greeting = 'Hello';
@@ -34,21 +34,22 @@ $pi       = 3.14159;
 $active   = true;
 
 // Variable names are case-sensitive
-$Name  = 'Alice';
-$name  = 'Bob';    // different variable!
+$Name = 'Alice';
+$name = 'Bob';    // different variable!
 
 // Must start with a letter or underscore, then letters/digits/underscores
-$_count   = 0;     // valid
+$_count = 0;       // valid
 // $3items = 'no'; // ✗ invalid — starts with a digit</code></pre>
-    <div class="warning-box">
-      Every statement ends with a <span class="hl-amber">semicolon</span> <code>;</code> — forgetting it is the most common beginner mistake!
-    </div>
-  </section>
+        <div class="warning-box">
+            Every statement ends with a <span class="hl-amber">semicolon</span> <code>;</code> — forgetting it is the
+            most common beginner mistake!
+        </div>
+    </section>
 
-  <!-- Slide — Constants -->
-  <section>
-    <h2>Constants</h2>
-    <pre><code class="language-php">&lt;?php
+    <!-- Slide — Constants -->
+    <section>
+        <h2>Constants</h2>
+        <pre><code class="language-php">&lt;?php
 
 // Preferred: const (compile-time, only literal values)
 const MAX_RETRIES = 3;
@@ -63,16 +64,18 @@ define('RANDOM_ID', random_int(1, 1000));
 
 echo APP_NAME;  // My App
 echo RANDOM_ID; // e.g. 472</code></pre>
-    <div class="best-practice">
-      Name constants in <code>UPPER_SNAKE_CASE</code>. Prefer <code>const</code> for simple
-      literal values; use <code>define()</code> when the value comes from a function or expression.
-    </div>
-  </section>
+        <div class="best-practice">
+            Name constants in <code>UPPER_SNAKE_CASE</code>. Prefer <code>const</code> for simple
+            literal values; use <code>define()</code> when the value comes from a function or expression or the
+            assignment
+            itself is conditional.
+        </div>
+    </section>
 
-  <!-- Slide — Callables and Calling Functions -->
-  <section>
-    <h2>Callables &amp; Calling Functions</h2>
-    <pre><code class="language-php">&lt;?php
+    <!-- Slide — Callables and Calling Functions -->
+    <section>
+        <h2>Callables &amp; Calling Functions</h2>
+        <pre><code class="language-php">&lt;?php
 
 // PHP has hundreds of built-in functions — call them by name
 $length = strlen('Hello');        // 5
@@ -91,13 +94,13 @@ sort($fruits);
 if (function_exists('mb_strlen')) {
     echo mb_strlen('Héllo'); // 5 (multibyte-safe)
 }</code></pre>
-    <p class="small">Find every built-in function at <span class="hl-teal">php.net/manual/en/funcref.php</span></p>
-  </section>
+        <p class="small">Find every built-in function at <span class="hl-teal">php.net/manual/en/funcref.php</span></p>
+    </section>
 
-  <!-- Slide — Comments -->
-  <section>
-    <h2>Comments</h2>
-    <pre><code class="language-php">&lt;?php
+    <!-- Slide — Comments -->
+    <section>
+        <h2>Comments</h2>
+        <pre><code class="language-php">&lt;?php
 
 // Single-line comment
 
@@ -119,5 +122,5 @@ function greet(string $name): string
 {
     return "Hello, {$name}!";
 }</code></pre>
-  </section>
+    </section>
 </section>

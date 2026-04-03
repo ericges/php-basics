@@ -64,13 +64,16 @@
 .reveal pre {
   width: 100%;
   margin: 0.5em auto;
-  margin-block-end: 0.7em;
   box-shadow: none;
   font-size: 0.52em;
   border-radius: 8px;
   background: transparent !important;
   border: none !important;
   padding: 0 !important;
+
+  &:not(:last-child) {
+    margin-block-end: .7em;
+  }
 }
 
 .reveal pre code[class*="language-"] {
@@ -166,7 +169,12 @@
 .cols { display: flex; gap: 1em; align-items: flex-start; }
 .cols > * { flex: 1; min-width: 0; }
 
-.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7em; }
+.compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5em;
+  margin-block: .35em .5em;
+}
 .compare > div {
   background: var(--bg-card); border: 1px solid var(--border-subtle);
   border-radius: 8px; padding: 0.5em 0.7em;
@@ -195,8 +203,8 @@
 .small { font-size: 0.48em; line-height: 1.85; }
 .tiny  { font-size: 0.62em; color: var(--text-muted); }
 .left  { text-align: left; }
-.mt0   { margin-top: 0; }
-.mb0   { margin-bottom: 0; }
+.mt0   { margin-top: 0 !important; }
+.mb0   { margin-bottom: 0 !important; }
 
 .reveal .progress { height: 3px; color: var(--accent-teal); }
 .reveal .controls button { color: var(--accent-teal); }

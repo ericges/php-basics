@@ -1,14 +1,14 @@
 <section>
-  <!-- Slide — divider -->
-  <section class="section-divider" data-transition="slide">
-    <p class="section-num">09</p>
-    <h2>Arrays</h2>
-  </section>
+    <!-- Slide — divider -->
+    <section class="section-divider" data-transition="slide">
+        <p class="section-num">09</p>
+        <h2>Arrays</h2>
+    </section>
 
-  <!-- Slide — Indexed Arrays -->
-  <section>
-    <h2>Indexed Arrays</h2>
-    <pre><code class="language-php">&lt;?php
+    <!-- Slide — Indexed Arrays -->
+    <section>
+        <h2>Indexed Arrays</h2>
+        <pre><code class="language-php">&lt;?php
 
 // Short syntax (preferred)
 $colors = ['red', 'green', 'blue'];
@@ -27,16 +27,16 @@ echo count($colors); // 4
 if (in_array('green', $colors, strict: true)) {
     echo 'Green is in the list!';
 }</code></pre>
-    <div class="best-practice">
-      Always pass <code>strict: true</code> to <code>in_array()</code> to use strict
-      comparison (<code>===</code>) and avoid type-juggling surprises.
-    </div>
-  </section>
+        <div class="best-practice">
+            Always pass <code>strict: true</code> to <code>in_array()</code> to use strict
+            comparison (<code>===</code>) and avoid type-juggling surprises.
+        </div>
+    </section>
 
-  <!-- Slide — Associative Arrays -->
-  <section>
-    <h2>Associative Arrays</h2>
-    <pre><code class="language-php">&lt;?php
+    <!-- Slide — Associative Arrays -->
+    <section>
+        <h2>Associative Arrays</h2>
+        <pre><code class="language-php">&lt;?php
 
 $user = [
     'name'  => 'Alice',
@@ -58,12 +58,12 @@ if (array_key_exists('email', $user)) {
 // Get all keys or all values
 $keys   = array_keys($user);   // ['name', 'email', 'age', 'role']
 $values = array_values($user);  // ['Alice', 'alice@...', 30, 'admin']</code></pre>
-  </section>
+    </section>
 
-  <!-- Slide — Useful Array Functions -->
-  <section>
-    <h2>Useful Array Functions</h2>
-    <pre><code class="language-php">&lt;?php
+    <!-- Slide — Useful Array Functions -->
+    <section>
+        <h2>Useful Array Functions</h2>
+        <pre><code class="language-php">&lt;?php
 
 $numbers = [4, 1, 7, 3, 9, 2];
 
@@ -84,12 +84,12 @@ $more    = [10, 11];
 $all     = [...$numbers, ...$more];
 
 // Destructuring (next slide)</code></pre>
-  </section>
+    </section>
 
-  <!-- Slide — Destructuring -->
-  <section>
-    <h2>Array Destructuring</h2>
-    <pre><code class="language-php">&lt;?php
+    <!-- Slide — Destructuring -->
+    <section>
+        <h2>Array Destructuring</h2>
+        <pre><code class="language-php">&lt;?php
 
 // Indexed destructuring
 $coordinates = [52.07, 13.73];
@@ -114,5 +114,5 @@ $people = [
 foreach ($people as ['name' => $name, 'age' => $age]) {
     echo "{$name} is {$age}\n";
 }</code></pre>
-  </section>
+    </section>
 </section>

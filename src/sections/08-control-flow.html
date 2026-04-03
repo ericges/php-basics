@@ -1,14 +1,14 @@
 <section>
-  <!-- Slide — divider -->
-  <section class="section-divider" data-transition="slide">
-    <p class="section-num">07</p>
-    <h2>Control Flow</h2>
-  </section>
+    <!-- Slide — divider -->
+    <section class="section-divider" data-transition="slide">
+        <p class="section-num">07</p>
+        <h2>Control Flow</h2>
+    </section>
 
-  <!-- Slide — if / elseif / else -->
-  <section>
-    <h2>if / elseif / else</h2>
-    <pre><code class="language-php">&lt;?php
+    <!-- Slide — if / elseif / else -->
+    <section>
+        <h2>if / elseif / else</h2>
+        <pre><code class="language-php">&lt;?php
 
 function describeTemperature(float $celsius): string
 {
@@ -24,12 +24,12 @@ function describeTemperature(float $celsius): string
 }
 
 echo describeTemperature(22.5); // Warm</code></pre>
-  </section>
+    </section>
 
-  <!-- Slide — match -->
-  <section>
-    <h2>match Expression</h2>
-    <pre><code class="language-php">&lt;?php
+    <!-- Slide — match -->
+    <section>
+        <h2>match Expression</h2>
+        <pre><code class="language-php">&lt;?php
 
 $statusCode = 404;
 
@@ -44,16 +44,16 @@ $message = match ($statusCode) {
 };
 
 echo $message; // Not Found</code></pre>
-    <div class="best-practice">
-      Prefer <code>match</code> over <code>switch</code> in PHP 8+. It uses strict comparison,
-      returns a value, and has no fall-through bugs.
-    </div>
-  </section>
+        <div class="best-practice">
+            Prefer <code>match</code> over <code>switch</code> in PHP 8+. It uses strict comparison,
+            returns a value, and has no fall-through bugs.
+        </div>
+    </section>
 
-  <!-- Slide — for & while -->
-  <section>
-    <h2>for &amp; while</h2>
-    <pre><code class="language-php">&lt;?php
+    <!-- Slide — for & while -->
+    <section>
+        <h2>for &amp; while</h2>
+        <pre><code class="language-php">&lt;?php
 
 // Classic for loop
 for ($i = 0; $i < 5; $i++) {
@@ -74,12 +74,12 @@ echo "Go!";
 do {
     $input = readline('Enter "yes": ');
 } while ($input !== 'yes');</code></pre>
-  </section>
+    </section>
 
-  <!-- Slide — foreach -->
-  <section>
-    <h2>foreach</h2>
-    <pre><code class="language-php">&lt;?php
+    <!-- Slide — foreach -->
+    <section>
+        <h2>foreach</h2>
+        <pre><code class="language-php">&lt;?php
 
 $fruits = ['apple', 'banana', 'cherry'];
 
@@ -97,13 +97,14 @@ foreach ($prices as $name => $price) {
 // apple: €1.2
 // banana: €0.8
 // cherry: €2.5</code></pre>
-    <p class="small"><code>foreach</code> is the go-to loop for arrays — cleaner and safer than a manual <code>for</code> with indices.</p>
-  </section>
+        <p class="small"><code>foreach</code> is the go-to loop for arrays — cleaner and safer than a manual
+            <code>for</code> with indices.</p>
+    </section>
 
-  <!-- Slide — Ternary & Null Coalescing -->
-  <section>
-    <h2>Ternary &amp; Null Coalescing</h2>
-    <pre><code class="language-php">&lt;?php
+    <!-- Slide — Ternary & Null Coalescing -->
+    <section>
+        <h2>Ternary &amp; Null Coalescing</h2>
+        <pre><code class="language-php">&lt;?php
 
 $age = 20;
 
@@ -120,6 +121,7 @@ $display = $nickname ?? $username ?? 'anonymous';
 
 // Null coalescing assignment ??=
 $config['debug'] ??= false;  // sets to false only if null/undefined</code></pre>
-    <p class="small"><code>??</code> is your best friend for defaults — cleaner and safer than <code>isset()</code> checks.</p>
-  </section>
+        <p class="small"><code>??</code> is your best friend for defaults — cleaner and safer than <code>isset()</code>
+            checks.</p>
+    </section>
 </section>

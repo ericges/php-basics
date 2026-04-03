@@ -1,44 +1,46 @@
 <section>
-  <!-- Slide — divider -->
-  <section class="section-divider" data-transition="slide">
-    <p class="section-num">02</p>
-    <h2>Your First PHP File</h2>
-  </section>
+    <!-- Slide — divider -->
+    <section class="section-divider" data-transition="slide">
+        <p class="section-num">02</p>
+        <h2>Your First PHP File</h2>
+    </section>
 
-  <!-- Slide — Opening Tag -->
-  <section>
-    <h2>The Opening Tag</h2>
-    <p>PHP code lives between an opening <code>&lt;?php</code> and an optional closing <code>?&gt;</code> tag.</p>
-    <div class="compare">
-      <div>
-        <p class="label-avoid">With closing tag<br><span style="font-size: 0.8em; font-weight: 400; opacity: 0.7;">(avoid in code-only files)</span></p>
-        <pre><code class="language-php">&lt;?php
+    <!-- Slide — Opening Tag -->
+    <section>
+        <h2>The Opening Tag</h2>
+        <p>PHP code lives between an opening <code>&lt;?php</code> and an optional closing <code>?&gt;</code> tag.</p>
+        <div class="compare">
+            <div>
+                <p class="label-avoid">With closing tag</p>
+                <pre><code class="language-php">&lt;?php
 
 echo 'Hello, world!';
 
 ?&gt;</code></pre>
-      </div>
-      <div>
-        <p class="label-good">Without closing tag ✓</p>
-        <pre><code class="language-php">&lt;?php
+                <p class="label-avoid mb0"><span style="font-size: 0.8em; font-weight: 400; opacity: 0.7;">
+                    Avoid <code>?&gt;</code> in code-only files!</span></p>
+            </div>
+            <div>
+                <p class="label-good">Without closing tag ✓</p>
+                <pre><code class="language-php">&lt;?php
 
 echo 'Hello, world!';</code></pre>
-      </div>
-    </div>
-    <div class="best-practice">
-      In <strong>code-only</strong> files (no HTML), start with <code>&lt;?php</code> but <strong>omit</strong>
-      the closing <code>?&gt;</code>. A stray newline after <code>?&gt;</code> can cause
-      "headers already sent" errors. You will see <code>?&gt;</code> later when mixing PHP with HTML.
-    </div>
-  </section>
+            </div>
+        </div>
+        <div class="best-practice">
+            In <strong>code-only</strong> files (no HTML), start with <code>&lt;?php</code> but <strong>omit</strong>
+            the closing <code>?&gt;</code>. A stray newline after <code>?&gt;</code> can cause
+            "headers already sent" errors. You will see <code>?&gt;</code> later when mixing PHP with HTML.
+        </div>
+    </section>
 
-  <!-- Slide — Running PHP -->
-  <section>
-    <h2>Running PHP</h2>
-    <h3>On the command line</h3>
-    <pre><code class="language-bash">php hello.php</code></pre>
-    <h3>Built-in development server</h3>
-    <pre><code class="language-bash">php -S localhost:8000</code></pre>
-    <p class="small">Opens a local web server in the current directory — no Apache/Nginx needed for learning.</p>
-  </section>
+    <!-- Slide — Running PHP -->
+    <section>
+        <h2>Running PHP</h2>
+        <h3>On the command line</h3>
+        <pre><code class="language-bash">php hello.php</code></pre>
+        <h3>Built-in development server</h3>
+        <pre><code class="language-bash">php -S localhost:8000</code></pre>
+        <p class="small">Opens a local web server in the current directory — no Apache/Nginx needed for learning.</p>
+    </section>
 </section>

@@ -49,7 +49,7 @@ const deck = new Reveal({
   slideNumber: 'c/t',
   transition: 'slide',
   transitionSpeed: 'default',
-  width: 900,
+  width: 940,
   height: 720,
   margin: 0.08,
   center: true,

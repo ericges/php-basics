@@ -30,6 +30,12 @@
   color: var(--text-primary);
   font-weight: 400;
 }
+.reveal .slides > section > section,
+.reveal .slides > section:not(:has(> section)) {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  max-height: 100%;
+}
 
 .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
   font-family: 'JetBrains Mono', monospace;
@@ -97,6 +103,11 @@
 /* override prism background for token consistency */
 .reveal pre code .token.operator,
 .reveal pre code .token.punctuation { color: #a9b7c6; }
+
+.stack > section {
+  padding-inline: 20px;
+  box-sizing: border-box;
+}
 
 /* ── Title Slide ────────────────────────────────────────────── */
 .title-slide h1 {

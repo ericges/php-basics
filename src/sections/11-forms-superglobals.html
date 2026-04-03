@@ -5,9 +5,9 @@
         <h2>Forms &amp; Superglobals</h2>
     </section>
 
-    <!-- Slide — HTML Form Basics -->
+    <!-- Slide — GET / Search Example -->
     <section>
-        <h2>HTML Form Basics</h2>
+        <h2>GET — Search Example</h2>
         <div class="compare compare-form">
             <div>
                 <pre class="mt0 mb0"><code class="language-html">&lt;!-- GET — data visible in URL --&gt;
@@ -26,6 +26,21 @@
                 </form>
             </div>
         </div>
+        <pre><code class="language-php">&lt;?php
+// search.php
+
+// $_GET['q'] comes from ?q=... in the URL
+$query = $_GET['q'] ?? '';
+
+if ($query !== '') {
+    echo "You searched for: {$query}";
+}</code></pre>
+        <p class="small">GET parameters appear in the URL — ideal for searches, filters, and bookmarkable pages.</p>
+    </section>
+
+    <!-- Slide — POST / Registration Example -->
+    <section>
+        <h2>POST — Registration Example</h2>
         <div class="compare compare-form">
             <div>
                 <pre class="mt0 mb0"><code class="language-html">&lt;!-- POST — data in request body --&gt;
@@ -61,21 +76,6 @@
                 </form>
             </div>
         </div>
-        <p class="small">The <code>name</code> attribute on each input becomes the key in PHP's superglobal array.</p>
-    </section>
-
-    <!-- Slide — $_GET and $_POST -->
-    <section>
-        <h2>$_GET and $_POST</h2>
-        <pre><code class="language-php">&lt;?php
-// search.php
-
-// $_GET['q'] comes from ?q=... in the URL
-$query = $_GET['q'] ?? '';
-
-if ($query !== '') {
-    echo "You searched for: {$query}";
-}</code></pre>
         <pre><code class="language-php">&lt;?php
 // register.php
 
@@ -91,6 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     echo "Registered: {$username}";
 }</code></pre>
+        <p class="small">POST data is sent in the request body — use for sensitive data and state-changing actions.</p>
     </section>
 
     <!-- Slide — Other Superglobals -->

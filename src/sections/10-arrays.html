@@ -1,0 +1,118 @@
+<section>
+  <!-- Slide — divider -->
+  <section class="section-divider" data-transition="slide">
+    <p class="section-num">09</p>
+    <h2>Arrays</h2>
+  </section>
+
+  <!-- Slide — Indexed Arrays -->
+  <section>
+    <h2>Indexed Arrays</h2>
+    <pre><code class="language-php">&lt;?php
+
+// Short syntax (preferred)
+$colors = ['red', 'green', 'blue'];
+
+// Access by index (0-based)
+echo $colors[0]; // red
+echo $colors[2]; // blue
+
+// Append an element
+$colors[] = 'yellow';
+
+// Count elements
+echo count($colors); // 4
+
+// Check if value exists
+if (in_array('green', $colors, strict: true)) {
+    echo 'Green is in the list!';
+}</code></pre>
+    <div class="best-practice">
+      Always pass <code>strict: true</code> to <code>in_array()</code> to use strict
+      comparison (<code>===</code>) and avoid type-juggling surprises.
+    </div>
+  </section>
+
+  <!-- Slide — Associative Arrays -->
+  <section>
+    <h2>Associative Arrays</h2>
+    <pre><code class="language-php">&lt;?php
+
+$user = [
+    'name'  => 'Alice',
+    'email' => 'alice@example.com',
+    'age'   => 30,
+];
+
+// Access by key
+echo $user['name'];  // Alice
+
+// Add / overwrite
+$user['role'] = 'admin';
+
+// Check if key exists
+if (array_key_exists('email', $user)) {
+    echo "Email: {$user['email']}";
+}
+
+// Get all keys or all values
+$keys   = array_keys($user);   // ['name', 'email', 'age', 'role']
+$values = array_values($user);  // ['Alice', 'alice@...', 30, 'admin']</code></pre>
+  </section>
+
+  <!-- Slide — Useful Array Functions -->
+  <section>
+    <h2>Useful Array Functions</h2>
+    <pre><code class="language-php">&lt;?php
+
+$numbers = [4, 1, 7, 3, 9, 2];
+
+// Sort (modifies in place)
+sort($numbers);          // [1, 2, 3, 4, 7, 9]
+
+// Map — transform each element
+$doubled = array_map(fn(int $n): int => $n * 2, $numbers);
+
+// Filter — keep elements matching a condition
+$big = array_filter($numbers, fn(int $n): bool => $n > 4);
+
+// Reduce — collapse to a single value
+$sum = array_reduce($numbers, fn(int $carry, int $n): int => $carry + $n, 0);
+
+// Spread operator — merge / unpack arrays
+$more    = [10, 11];
+$all     = [...$numbers, ...$more];
+
+// Destructuring (next slide)</code></pre>
+  </section>
+
+  <!-- Slide — Destructuring -->
+  <section>
+    <h2>Array Destructuring</h2>
+    <pre><code class="language-php">&lt;?php
+
+// Indexed destructuring
+$coordinates = [52.07, 13.73];
+[$lat, $lng] = $coordinates;
+echo "{$lat}, {$lng}"; // 52.07, 13.73
+
+// Skip elements
+[, , $third] = [10, 20, 30];
+echo $third; // 30
+
+// Associative destructuring
+$user = ['name' => 'Alice', 'email' => 'alice@example.com', 'age' => 30];
+['name' => $name, 'email' => $email] = $user;
+echo "{$name} — {$email}";
+
+// Works in foreach too!
+$people = [
+    ['name' => 'Alice', 'age' => 30],
+    ['name' => 'Bob',   'age' => 25],
+];
+
+foreach ($people as ['name' => $name, 'age' => $age]) {
+    echo "{$name} is {$age}\n";
+}</code></pre>
+  </section>
+</section>

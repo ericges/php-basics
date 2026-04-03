@@ -1,0 +1,47 @@
+<section>
+  <!-- Slide — divider -->
+  <section class="section-divider" data-transition="slide">
+    <p class="section-num">05</p>
+    <h2>echo, print &amp; die</h2>
+  </section>
+
+  <!-- Slide — echo & print -->
+  <section>
+    <h2>echo &amp; print</h2>
+    <pre><code class="language-php">&lt;?php
+
+// echo — can take multiple arguments, returns nothing
+echo 'Hello', ' ', 'World!';  // Hello World!
+
+// print — takes ONE argument, returns 1 (usable in expressions)
+print 'Hello World!';
+
+// Common usage
+$name = 'Alice';
+echo "Welcome, {$name}!\n";</code></pre>
+    <div class="warning-box">
+      <code>echo</code> and <code>print</code> are <em>language constructs</em>, not functions.
+      You can call them without parentheses. In practice, <code>echo</code> is used almost everywhere.
+    </div>
+  </section>
+
+  <!-- Slide — die / exit -->
+  <section>
+    <h2>die &amp; exit</h2>
+    <pre><code class="language-php">&lt;?php
+
+// die() and exit() are identical — they halt execution immediately
+$config = parse_ini_file('config.ini');
+
+if ($config === false) {
+    die('Error: could not load config file.');
+}
+
+// With an integer: sets the exit status code (0 = success)
+exit(1);  // non-zero = error
+
+// Often used for quick debugging (but use proper logging instead!)
+die('Reached this point');</code></pre>
+    <p class="small"><code>die</code> is simply an alias for <code>exit</code>. Both accept an optional <code>string</code> message or <code>int</code> status code.</p>
+  </section>
+</section>

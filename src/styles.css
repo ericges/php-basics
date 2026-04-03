@@ -1,0 +1,212 @@
+/* ── Theme Variables ────────────────────────────────────────── */
+:root {
+  --bg-deep:       #0c1017;
+  --bg-card:       #141a24;
+  --bg-code:       #1d2433;
+  --border-subtle: #283040;
+  --text-primary:  #e0e6f0;
+  --text-muted:    #7a8599;
+  --accent-amber:  #f0a030;
+  --accent-teal:   #3dd6c8;
+  --accent-pink:   #f472b6;
+  --accent-blue:   #5eaafc;
+  --accent-green:  #5eead4;
+  --accent-purple: #b894f6;
+  --accent-red:    #fb7185;
+  --php-indigo:    #8892be;
+}
+
+/* ── Reveal Overrides ───────────────────────────────────────── */
+.reveal-viewport {
+  background: var(--bg-deep);
+  background-image:
+    radial-gradient(ellipse at 15% 60%, rgba(61,214,200,0.035) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 25%, rgba(240,160,48,0.03) 0%, transparent 50%);
+}
+
+.reveal {
+  font-family: 'Outfit', sans-serif;
+  font-size: 30px;
+  color: var(--text-primary);
+  font-weight: 400;
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text-primary);
+  text-transform: none;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+.reveal h1 { font-size: 2.4em; }
+.reveal h2 { font-size: 1.45em; }
+.reveal h3 { font-size: 1.05em; color: var(--accent-teal); font-weight: 500; margin-block-start: 0.7em; }
+
+.reveal p  { font-size: 0.52em; line-height: 1.85; margin-bottom: 0.5em; }
+.reveal li { line-height: 1.75; margin-bottom: 0.25em; font-size: 0.88em; }
+.reveal li::marker { color: var(--accent-amber); }
+.reveal ul, .reveal ol { display: block; margin-left: 0.4em; text-align: left; }
+
+/* ── Inline code ────────────────────────────────────────────── */
+.reveal code:not([class*="language-"]) {
+  font-family: 'JetBrains Mono', monospace;
+  background: var(--bg-code);
+  border: 1px solid var(--border-subtle);
+  padding: 0.08em 0.32em;
+  border-radius: 4px;
+  font-size: 0.82em;
+  color: var(--accent-amber);
+}
+
+/* ── Prism code blocks inside reveal ────────────────────────── */
+.reveal pre {
+  width: 100%;
+  margin: 0.5em auto;
+  margin-block-end: 0.7em;
+  box-shadow: none;
+  font-size: 0.52em;
+  border-radius: 8px;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.reveal pre code[class*="language-"] {
+  font-family: 'JetBrains Mono', monospace !important;
+  background: var(--bg-code) !important;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 0.9em 1.2em !important;
+  line-height: 1.55;
+  max-height: 500px;
+  overflow: auto;
+  scrollbar-width: thin;
+  font-size: 1em;
+  text-shadow: none !important;
+  display: block;
+  white-space: pre;
+}
+
+/* override prism background for token consistency */
+.reveal pre code .token.operator,
+.reveal pre code .token.punctuation { color: #a9b7c6; }
+
+/* ── Title Slide ────────────────────────────────────────────── */
+.title-slide h1 {
+  font-size: 2.8em;
+  background: linear-gradient(135deg, var(--accent-teal), var(--accent-blue));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; color: transparent;
+  margin-bottom: 0.1em;
+}
+.title-slide .php-logo {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 4.8em; font-weight: 700;
+  color: var(--php-indigo); opacity: 0.85;
+  margin-bottom: 0.08em;
+}
+.title-slide .subtitle {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text-muted); font-size: 0.8em;
+}
+
+/* ── Section Divider ────────────────────────────────────────── */
+.section-divider { text-align: left !important; }
+.section-divider h2 {
+  font-size: 2em;
+  background: linear-gradient(135deg, var(--accent-amber), var(--accent-pink));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; color: transparent;
+}
+.section-divider .section-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7em; color: var(--text-muted); letter-spacing: 0.1em;
+}
+
+/* ── Callout Boxes ──────────────────────────────────────────── */
+.best-practice, .warning-box {
+  padding: 0.45em 0.85em;
+  border-radius: 0 6px 6px 0;
+  margin: 0.5em 0;
+  font-size: 0.52em;
+  line-height: 1.85;
+  text-align: left;
+}
+.best-practice {
+  background: rgba(61,214,200,0.07);
+  border-left: 3px solid var(--accent-teal);
+}
+.best-practice::before {
+  content: '✦ Best Practice'; display: block;
+  font-family: 'JetBrains Mono', monospace; font-weight: 600;
+  color: var(--accent-teal); font-size: 0.85em; margin-bottom: 0.2em;
+}
+.warning-box {
+  background: rgba(240,160,48,0.07);
+  border-left: 3px solid var(--accent-amber);
+}
+.warning-box::before {
+  content: '⚠ Note'; display: block;
+  font-family: 'JetBrains Mono', monospace; font-weight: 600;
+  color: var(--accent-amber); font-size: 0.85em; margin-bottom: 0.2em;
+}
+
+/* ── Highlight helpers ──────────────────────────────────────── */
+.hl-amber  { color: var(--accent-amber); font-weight: 600; }
+.hl-teal   { color: var(--accent-teal);  font-weight: 600; }
+.hl-pink   { color: var(--accent-pink);  font-weight: 600; }
+.hl-blue   { color: var(--accent-blue);  font-weight: 600; }
+.hl-green  { color: var(--accent-green); font-weight: 600; }
+.hl-purple { color: var(--accent-purple);font-weight: 600; }
+.hl-red    { color: var(--accent-red);   font-weight: 600; }
+
+/* ── Layout helpers ─────────────────────────────────────────── */
+.cols { display: flex; gap: 1em; align-items: flex-start; }
+.cols > * { flex: 1; min-width: 0; }
+
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7em; }
+.compare > div {
+  background: var(--bg-card); border: 1px solid var(--border-subtle);
+  border-radius: 8px; padding: 0.5em 0.7em;
+}
+.compare .label-good {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--accent-green); font-size: 0.72em; font-weight: 600;
+}
+.compare .label-avoid {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--accent-red); font-size: 0.72em; font-weight: 600;
+}
+
+/* ── Table ──────────────────────────────────────────────────── */
+.reveal table { border-collapse: collapse; font-size: 0.7em; margin: 0.4em auto; }
+.reveal table th {
+  font-family: 'JetBrains Mono', monospace;
+  background: var(--bg-card); color: var(--accent-teal);
+  border-bottom: 2px solid var(--accent-teal);
+  padding: 0.35em 0.7em; font-weight: 600;
+}
+.reveal table td {
+  padding: 0.3em 0.7em; border-bottom: 1px solid var(--border-subtle);
+}
+
+.small { font-size: 0.48em; line-height: 1.85; }
+.tiny  { font-size: 0.62em; color: var(--text-muted); }
+.left  { text-align: left; }
+.mt0   { margin-top: 0; }
+.mb0   { margin-bottom: 0; }
+
+.reveal .progress { height: 3px; color: var(--accent-teal); }
+.reveal .controls button { color: var(--accent-teal); }
+.reveal .slide-number {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text-muted); font-size: 13px;
+  background: transparent; right: 22px; bottom: 14px;
+}
+
+/* Ensure fragment visibility */
+.reveal .fragment { visibility: visible; }
+.reveal .fragment:not(.visible):not(.current-fragment) { opacity: 0.35; }
+.reveal .fragment.visible { opacity: 1; }

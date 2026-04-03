@@ -1,0 +1,91 @@
+<section>
+  <!-- Slide — divider -->
+  <section class="section-divider" data-transition="slide">
+    <p class="section-num">08</p>
+    <h2>Functions</h2>
+  </section>
+
+  <!-- Slide — Declaring Functions -->
+  <section>
+    <h2>Declaring Functions</h2>
+    <pre><code class="language-php">&lt;?php
+
+// Parameter types + return type
+function calculateTax(float $amount, float $rate = 0.19): float
+{
+    return $amount * $rate;
+}
+
+echo calculateTax(100.0);       // 19.0
+echo calculateTax(100.0, 0.07); // 7.0
+
+// void return type — function returns nothing
+function logMessage(string $message): void
+{
+    file_put_contents('app.log', "{$message}\n", FILE_APPEND);
+}
+
+// Nullable return type — may return null
+function findById(int $id): ?string
+{
+    // returns string or null
+}</code></pre>
+  </section>
+
+  <!-- Slide — Arrow Functions -->
+  <section>
+    <h2>Arrow Functions</h2>
+    <pre><code class="language-php">&lt;?php
+
+// Traditional anonymous function (closure)
+$double = function (int $n): int {
+    return $n * 2;
+};
+
+// Arrow function — shorter syntax, single expression
+$double = fn(int $n): int => $n * 2;
+
+echo $double(5); // 10
+
+// Arrow functions automatically capture outer variables
+$multiplier = 3;
+$multiply = fn(int $n): int => $n * $multiplier;
+echo $multiply(4); // 12
+
+// Great with array functions
+$numbers = [1, 2, 3, 4, 5];
+$squared = array_map(fn(int $n): int => $n ** 2, $numbers);
+// [1, 4, 9, 16, 25]</code></pre>
+  </section>
+
+  <!-- Slide — Named Arguments -->
+  <section>
+    <h2>Named Arguments</h2>
+    <pre><code class="language-php">&lt;?php
+
+function createUser(
+    string $name,
+    string $email,
+    string $role = 'viewer',
+    bool $active = true,
+): void {
+    echo "{$name} ({$email}) — {$role}\n";
+}
+
+// Positional (traditional)
+createUser('Alice', 'alice@example.com', 'admin', true);
+
+// Named arguments — skip defaults, self-documenting
+createUser(
+    name: 'Bob',
+    email: 'bob@example.com',
+    role: 'editor',
+);
+
+// Order doesn't matter with named args
+createUser(
+    email: 'carol@example.com',
+    name: 'Carol',
+);</code></pre>
+  </section>
+</section>

@@ -1,0 +1,87 @@
+<section>
+  <!-- Slide — divider -->
+  <section class="section-divider" data-transition="slide">
+    <p class="section-num">06</p>
+    <h2>Strings &amp; Interpolation</h2>
+  </section>
+
+  <!-- Slide — Single vs Double Quotes -->
+  <section>
+    <h2>Single vs Double Quotes</h2>
+    <div class="compare">
+      <div>
+        <p class="label-good">Single quotes — literal</p>
+        <pre><code class="language-php">$msg = 'Hello\n';
+echo $msg;
+// Output: Hello\n (literal backslash-n)
+
+$name = 'Alice';
+echo 'Hi, $name';
+// Output: Hi, $name (no interpolation)</code></pre>
+      </div>
+      <div>
+        <p class="label-good">Double quotes — interpolation</p>
+        <pre><code class="language-php">$msg = "Hello\n";
+echo $msg;
+// Output: Hello (+ newline)
+
+$name = 'Alice';
+echo "Hi, {$name}";
+// Output: Hi, Alice</code></pre>
+      </div>
+    </div>
+    <p class="small">Use <span class="hl-teal">single quotes</span> for plain strings (slightly faster, clearer intent).<br>
+    Use <span class="hl-teal">double quotes</span> when you need interpolation or escape sequences like <code>\n</code>, <code>\t</code>.</p>
+  </section>
+
+  <!-- Slide — Curly Brace Interpolation -->
+  <section>
+    <h2>Curly Brace Interpolation</h2>
+    <pre><code class="language-php">&lt;?php
+
+$user = 'Alice';
+$items = ['apple', 'banana', 'cherry'];
+
+// Always use curly braces — clear, unambiguous, consistent
+echo "Hello, {$user}!";
+echo "First item: {$items[0]}";
+
+// Without braces, this would break:
+echo "She has {$user}s";    // ✓ "She has Alices"
+// echo "She has $users";   // ✗ looks for $users variable
+
+// Works with object properties too
+// echo "Name: {$user->name}";</code></pre>
+    <div class="best-practice">
+      Always wrap variables in curly braces <code>{$var}</code> inside double-quoted strings.
+      It's unambiguous and prevents subtle bugs.
+    </div>
+  </section>
+
+  <!-- Slide — Heredoc & Nowdoc -->
+  <section>
+    <h2>Heredoc &amp; Nowdoc</h2>
+    <div class="compare">
+      <div>
+        <p class="label-good">Heredoc — interpolates (like "")</p>
+        <pre><code class="language-php">$name = 'Alice';
+$html = &lt;&lt;&lt;HTML
+    &lt;h1&gt;Welcome&lt;/h1&gt;
+    &lt;p&gt;Hello, {$name}!&lt;/p&gt;
+    HTML;
+
+echo $html;</code></pre>
+      </div>
+      <div>
+        <p class="label-good">Nowdoc — literal (like '')</p>
+        <pre><code class="language-php">$code = &lt;&lt;&lt;'TEXT'
+    Variables like $name are
+    NOT interpolated here.
+    TEXT;
+
+echo $code;</code></pre>
+      </div>
+    </div>
+    <p class="small">Useful for multi-line strings. Heredoc behaves like double quotes; Nowdoc (note the single quotes around the tag) behaves like single quotes.</p>
+  </section>
+</section>

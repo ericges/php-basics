@@ -1,0 +1,125 @@
+<section>
+  <!-- Slide — divider -->
+  <section class="section-divider" data-transition="slide">
+    <p class="section-num">07</p>
+    <h2>Control Flow</h2>
+  </section>
+
+  <!-- Slide — if / elseif / else -->
+  <section>
+    <h2>if / elseif / else</h2>
+    <pre><code class="language-php">&lt;?php
+
+function describeTemperature(float $celsius): string
+{
+    if ($celsius >= 35.0) {
+        return 'Hot';
+    } elseif ($celsius >= 20.0) {
+        return 'Warm';
+    } elseif ($celsius >= 10.0) {
+        return 'Cool';
+    } else {
+        return 'Cold';
+    }
+}
+
+echo describeTemperature(22.5); // Warm</code></pre>
+  </section>
+
+  <!-- Slide — match -->
+  <section>
+    <h2>match Expression</h2>
+    <pre><code class="language-php">&lt;?php
+
+$statusCode = 404;
+
+// match is an expression — it returns a value
+// Uses strict (===) comparison — no type juggling
+$message = match ($statusCode) {
+    200     => 'OK',
+    301     => 'Moved Permanently',
+    404     => 'Not Found',
+    500     => 'Internal Server Error',
+    default => 'Unknown status',
+};
+
+echo $message; // Not Found</code></pre>
+    <div class="best-practice">
+      Prefer <code>match</code> over <code>switch</code> in PHP 8+. It uses strict comparison,
+      returns a value, and has no fall-through bugs.
+    </div>
+  </section>
+
+  <!-- Slide — for & while -->
+  <section>
+    <h2>for &amp; while</h2>
+    <pre><code class="language-php">&lt;?php
+
+// Classic for loop
+for ($i = 0; $i < 5; $i++) {
+    echo "{$i} ";
+}
+// 0 1 2 3 4
+
+// while loop
+$count = 3;
+while ($count > 0) {
+    echo "{$count}... ";
+    $count--;
+}
+echo "Go!";
+// 3... 2... 1... Go!
+
+// do-while — body runs at least once
+do {
+    $input = readline('Enter "yes": ');
+} while ($input !== 'yes');</code></pre>
+  </section>
+
+  <!-- Slide — foreach -->
+  <section>
+    <h2>foreach</h2>
+    <pre><code class="language-php">&lt;?php
+
+$fruits = ['apple', 'banana', 'cherry'];
+
+// Value only
+foreach ($fruits as $fruit) {
+    echo "{$fruit}\n";
+}
+
+// Key and value
+$prices = ['apple' => 1.20, 'banana' => 0.80, 'cherry' => 2.50];
+
+foreach ($prices as $name => $price) {
+    echo "{$name}: €{$price}\n";
+}
+// apple: €1.2
+// banana: €0.8
+// cherry: €2.5</code></pre>
+    <p class="small"><code>foreach</code> is the go-to loop for arrays — cleaner and safer than a manual <code>for</code> with indices.</p>
+  </section>
+
+  <!-- Slide — Ternary & Null Coalescing -->
+  <section>
+    <h2>Ternary &amp; Null Coalescing</h2>
+    <pre><code class="language-php">&lt;?php
+
+$age = 20;
+
+// Ternary operator
+$label = ($age >= 18) ? 'adult' : 'minor';
+echo $label; // adult
+
+// Null coalescing operator ??
+// Returns left side if it exists and is not null, otherwise right side
+$username = $_GET['user'] ?? 'guest';
+
+// Chainable
+$display = $nickname ?? $username ?? 'anonymous';
+
+// Null coalescing assignment ??=
+$config['debug'] ??= false;  // sets to false only if null/undefined</code></pre>
+    <p class="small"><code>??</code> is your best friend for defaults — cleaner and safer than <code>isset()</code> checks.</p>
+  </section>
+</section>

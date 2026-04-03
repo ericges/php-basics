@@ -1,0 +1,76 @@
+<section>
+  <!-- Slide — divider -->
+  <section class="section-divider" data-transition="slide">
+    <p class="section-num">04</p>
+    <h2>Debugging Variables</h2>
+  </section>
+
+  <!-- Slide — Debugging: var_dump -->
+  <section>
+    <h2>Debugging Variables at Runtime</h2>
+    <h3>var_dump() — detailed type + value</h3>
+    <div class="compare">
+      <div>
+        <pre><code class="language-php">$score  = 42;
+$colors = ['red', 'green'];
+
+var_dump($score);
+var_dump($colors);</code></pre>
+      </div>
+      <div>
+        <pre><code class="language-text">int(42)
+
+array(2) {
+  [0]=> string(3) "red"
+  [1]=> string(5) "green"
+}</code></pre>
+      </div>
+    </div>
+    <p class="small"><code>var_dump()</code> is the most informative tool — it shows the <span class="hl-teal">type</span> and <span class="hl-amber">value</span> of any variable, including nested structures.</p>
+  </section>
+
+  <!-- Slide — Debugging: print_r -->
+  <section>
+    <h2>Debugging Variables at Runtime</h2>
+    <h3>print_r() — human-readable, especially for arrays</h3>
+    <div class="compare">
+      <div>
+        <pre><code class="language-php">$colors = ['red', 'green'];
+
+// Echo directly:
+print_r($colors);
+
+// Or capture as string:
+$output = print_r($colors, true);</code></pre>
+      </div>
+      <div>
+        <pre><code class="language-text">Array
+(
+    [0] => red
+    [1] => green
+)</code></pre>
+      </div>
+    </div>
+    <p class="small">Pass <code>true</code> as the second argument to return the output as a string instead of printing it.</p>
+  </section>
+
+  <!-- Slide — Debugging: gettype -->
+  <section>
+    <h2>Debugging Variables at Runtime</h2>
+    <h3>gettype() — returns the type as a string</h3>
+    <div class="compare">
+      <div>
+        <pre><code class="language-php">$val = 3.14;
+
+echo gettype($val);
+
+// Or capture as variable:
+$type = gettype($val);</code></pre>
+      </div>
+      <div>
+        <pre><code class="language-text">double</code></pre>
+      </div>
+    </div>
+    <p class="small">Useful for quick type checks. Note that floats report as <code>"double"</code> — a quirk inherited from C.</p>
+  </section>
+</section>

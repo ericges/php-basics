@@ -328,7 +328,7 @@
   border-radius: 3px;
   display: inline-block;
   align-self: flex-start;
-  margin-bottom: 0.8em;
+  margin-bottom: 1em;
 }
 .form-preview .method-get {
   background: rgba(94,170,252,0.15);

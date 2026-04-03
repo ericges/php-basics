@@ -26,8 +26,7 @@
                 </form>
             </div>
         </div>
-        <pre><code class="language-php">&lt;?php
-// search.php
+        <pre><code class="language-php">&lt;?php // search.php
 
 // $_GET['q'] comes from ?q=... in the URL
 $query = $_GET['q'] ?? '';
@@ -38,58 +37,52 @@ if ($query !== '') {
         <p class="small">GET parameters appear in the URL — ideal for searches, filters, and bookmarkable pages.</p>
     </section>
 
-    <!-- Slide — POST / Registration Example -->
+    <!-- Slide — POST / Login Example -->
     <section>
-        <h2>POST — Registration Example</h2>
+        <h2>POST — Login Example</h2>
         <div class="compare compare-form">
             <div>
                 <pre class="mt0 mb0"><code class="language-html">&lt;!-- POST — data in request body --&gt;
-&lt;form action="/register.php" method="POST"&gt;
-    &lt;label for="user-input"&gt;Username&lt;/label&gt;
-    &lt;input name="user" id="user-input" type="text"&gt;
-
-    &lt;label for="mail-input"&gt;Email&lt;/label&gt;
-    &lt;input name="mail" id="mail-input" type="email"&gt;
-
+&lt;form action="/login.php" method="POST"&gt;
+    &lt;label for="email-input"&gt;E-Mail Address&lt;/label&gt;
+    &lt;input name="email" id="email-input" type="email"&gt;
     &lt;label for="pass-input"&gt;Password&lt;/label&gt;
-    &lt;input name="pass" id="pass-input" type="password"&gt;
-
-    &lt;button type="submit"&gt;Register&lt;/button&gt;
+    &lt;input name="password" id="pass-input" type="password"&gt;
+    &lt;button type="submit"&gt;Log In&lt;/button&gt;
 &lt;/form&gt;</code></pre>
             </div>
             <div class="form-preview">
                 <span class="method-badge method-post">POST</span>
                 <form class="form-stack" onsubmit="return false">
                     <div class="form-group">
-                        <label for="user">Username</label>
-                        <input name="user" id="user" type="text" disabled>
+                        <label for="email-input">E-Mail Address</label>
+                        <input name="email" id="email-input" type="email" disabled>
                     </div>
                     <div class="form-group">
-                        <label for="mail">Email</label>
-                        <input name="mail" id="mail" type="email" disabled>
+                        <label for="pass-input">Password</label>
+                        <input name="password" id="pass-input" type="password" disabled>
                     </div>
-                    <div class="form-group">
-                        <label for="pass">Password</label>
-                        <input name="pass" id="pass" type="password" disabled>
-                    </div>
-                    <button type="button">Register</button>
+                    <button type="button">Log In</button>
                 </form>
             </div>
         </div>
-        <pre><code class="language-php">&lt;?php
-// register.php
+        <pre><code class="language-php">&lt;?php // login.php
 
 // $_POST contains data from the form body
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_POST['username'] ?? '';
     $email    = $_POST['email'] ?? '';
+    $password = $_POST['password'] ?? '';
 
     // Always validate & sanitize!
-    if ($username === '' || $email === '') {
+    if ($email === '' || $password === '') {
         die('All fields are required.');
     }
 
-    echo "Registered: {$username}";
+    if ($password !== 'secret') {
+        die('Invalid credentials.');
+    }
+
+    echo "Welcome back, {$email}!";
 }</code></pre>
         <p class="small">POST data is sent in the request body — use for sensitive data and state-changing actions.</p>
     </section>
@@ -97,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- Slide — Other Superglobals -->
     <section>
         <h2>Superglobals Overview</h2>
-        <table>
+        <table style="text-align: left">
             <thead>
             <tr>
                 <th>Variable</th>

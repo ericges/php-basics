@@ -39,6 +39,21 @@ echo 'Hello, world!';
         </div>
     </section>
 
+    <!-- Slide — Create hello.php -->
+    <section>
+        <h2>Create Your First File</h2>
+        <p>Create a new file called <code>hello.php</code> and add the following:</p>
+        <pre><code class="language-php">&lt;?php
+
+echo 'Hello, world!';
+
+</code></pre>
+        <div class="best-practice">
+            PHP files use the <code>.php</code> extension. Save the file in any folder you like —
+            you'll run it from there in the next step.
+        </div>
+    </section>
+
     <!-- Slide — Running PHP -->
     <section>
         <h2>Running PHP</h2>
@@ -47,5 +62,7 @@ echo 'Hello, world!';
         <h3>Built-in development server</h3>
         <pre><code class="language-bash">php -S localhost:8000</code></pre>
         <p class="small">Opens a local web server in the current directory — no Apache/Nginx needed for learning.</p>
+        <p>With the server running, visit&ensp;<a href="http://localhost:8000/hello.php" class="hl-teal"
+            >http://localhost:8000/hello.php</a>&ensp;to see your script's output in the browser.</p>
     </section>
 </section>

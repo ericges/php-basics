@@ -1,7 +1,9 @@
 import 'reveal.js/dist/reset.css'
 import 'reveal.js/dist/reveal.css'
 import 'prismjs/themes/prism-tomorrow.css'
-import './styles.css'
+import './styles/styles.css'
+import './styles/fonts/JetBrains_Mono.css'
+import './styles/fonts/Outfit.css'
 
 import Reveal from 'reveal.js'
 import Prism from 'prismjs'

@@ -1,0 +1,48 @@
+<section>
+    <!-- Slide — divider -->
+    <section class="section-divider" data-transition="slide">
+        <p class="section-num">12</p>
+        <h2>Diving Deeper</h2>
+    </section>
+
+    <!-- Slide — Docblocks -->
+    <section>
+        <h2>Docblocks</h2>
+        <p>Docblocks start with <code>/**</code> and describe code with annotations like <code>@param</code>,
+            <code>@return</code> or <code>@throws</code>.
+            <br>IDEs, static analysers, and documentation generators rely on them, e.g., to assist with code
+            understanding and documentation.</p>
+        <pre><code class="language-php">&lt;?php
+
+/**
+ * Calculate the total price including tax.
+ *
+ * @param  float  $price    Base price before tax
+ * @param  float  $taxRate  Tax rate as a decimal (e.g. 0.19)
+ * @return float            Final price with tax applied
+ */
+function totalWithTax(float $price, float $taxRate): float
+{
+    return $price * (1 + $taxRate);
+}
+
+/**
+ * Summarize a list of items.
+ *
+ * @param  string[]  $items          List of item names
+ * @param  int       $limit          Max items to display
+ * @return string                    Comma-separated summary
+ * @throws InvalidArgumentException  If $items is empty
+ */
+function summarize(array $items, int $limit = 5): string
+{
+    if (count($items) < 1) {
+        throw new InvalidArgumentException('Items array cannot be empty');
+    }
+
+    return implode(', ', array_slice($items, 0, $limit));
+}
+
+</code></pre>
+    </section>
+</section>

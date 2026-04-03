@@ -52,9 +52,9 @@ $middle_name = null;                      // null — explicitly "no value"</cod
         <pre><code class="language-php">&lt;?php
 
 // PHP has hundreds of built-in functions — call them by name
-$length = strlen('Hello');        // 5
-$upper  = strtoupper('hello');    // "HELLO"
-$random = random_int(1, 100);    // e.g. 42
+$length = strlen('Hello');     // 5
+$upper  = strtoupper('hello'); // "HELLO"
+$random = random_int(1, 100);  // e.g. 42
 
 // Functions can be nested
 $trimmed = strtolower(trim('  HELLO  ')); // "hello"
@@ -63,12 +63,8 @@ $trimmed = strtolower(trim('  HELLO  ')); // "hello"
 $fruits = ['banana', 'apple', 'cherry'];
 sort($fruits);
 // $fruits is now ['apple', 'banana', 'cherry']
-
-// Check if a function exists
-if (function_exists('mb_strlen')) {
-    echo mb_strlen('Héllo'); // 5 (multibyte-safe)
-}</code></pre>
-        <p class="small">Find every built-in function at <span class="hl-teal">php.net/manual/en/funcref.php</span></p>
+</code></pre>
+        <p class="small">Find every built-in function at <a class="hl-teal" href="https://php.net/manual/en/funcref.php">php.net/manual/en/funcref.php</a></p>
     </section>
 
     <!-- Slide — Constants -->
@@ -109,18 +105,12 @@ echo RANDOM_ID; // e.g. 472</code></pre>
 /*
  * Multi-line / block comment.
  * Useful for longer explanations.
- */
-
-/**
- * Docblock — used by IDEs, documentation generators,
- * and static analysis tools.
- *
- * @param  string $name  The user's name
- * @return string        A greeting message
- */
-function greet(string $name): string
-{
-    return "Hello, {$name}!";
-}</code></pre>
+ */</code></pre>
+        <div class="best-practice">
+            <strong>Prefer <code>//</code> over <code>#</code> for single-line comments.</strong>
+            <br>The <code>#</code> symbol originates
+            from Unix shell scripting where it is meant for the shebang line (<code>#!</code>). Using <code>//</code>
+            keeps your PHP code idiomatic and avoids confusion.
+        </div>
     </section>
 </section>

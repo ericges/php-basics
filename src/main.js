@@ -24,7 +24,8 @@ import functions from './sections/09-functions.html?raw'
 import arrays from './sections/10-arrays.html?raw'
 import formsSuperglobals from './sections/11-forms-superglobals.html?raw'
 import templating from './sections/12-templating.html?raw'
-import wrapUp from './sections/13-wrap-up.html?raw'
+import divingDeeper from './sections/13-diving-deeper.html?raw'
+import wrapUp from './sections/14-wrap-up.html?raw'
 
 const sections = [
   title,
@@ -39,6 +40,7 @@ const sections = [
   arrays,
   formsSuperglobals,
   templating,
+  divingDeeper,
   wrapUp,
 ]
 

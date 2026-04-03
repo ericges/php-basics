@@ -1,4 +1,4 @@
-import { defineConfig, loadEnv } from 'vite'
+import { defineConfig } from 'vite'
 
 function normalizeBasePath(value) {
   if (!value || value === '/') {
@@ -9,15 +9,11 @@ function normalizeBasePath(value) {
   return withLeadingSlash.endsWith('/') ? withLeadingSlash : `${withLeadingSlash}/`
 }
 
-export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, process.cwd(), '')
-
-  return {
-    base: normalizeBasePath(env.BASE_PATH),
-    publicDir: false,
-    build: {
-      outDir: 'public',
-      emptyOutDir: true,
-    },
-  }
-})
+export default defineConfig(() => ({
+  base: normalizeBasePath(process.env.BASE_PATH),
+  publicDir: false,
+  build: {
+    outDir: 'public',
+    emptyOutDir: true,
+  },
+}))
